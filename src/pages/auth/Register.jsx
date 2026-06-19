@@ -21,13 +21,18 @@ export default function Register() {
   })
 
   async function onSubmit(data) {
-    const { error } = await supabase.auth.signUp({
+    const { data: result, error } = await supabase.auth.signUp({
       email: data.email,
       password: data.password,
       options: { data: { name: data.name } },
     })
     if (error) {
       setError('root', { message: error.message })
+      return
+    }
+    // identities가 비어있으면 이미 가입된 이메일
+    if (result.user && result.user.identities?.length === 0) {
+      setError('root', { message: '이미 사용 중인 이메일입니다' })
       return
     }
     navigate('/')
