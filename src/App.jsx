@@ -15,6 +15,7 @@ import PostWrite from './pages/community/PostWrite'
 import InquiryWrite from './pages/inquiry/InquiryWrite'
 import InquiryList from './pages/inquiry/InquiryList'
 import Login from './pages/auth/Login'
+import LoginSuccess from './pages/auth/LoginSuccess'
 import Register from './pages/auth/Register'
 import MyPage from './pages/MyPage'
 import NotFound from './pages/NotFound'
@@ -56,6 +57,7 @@ export default function App() {
 
         {/* 인증 */}
         <Route path="login" element={<Login />} />
+        <Route path="login/success" element={<LoginSuccess />} />
         <Route path="register" element={<Register />} />
         <Route path="mypage" element={<ProtectedRoute><MyPage /></ProtectedRoute>} />
 
