@@ -17,6 +17,7 @@ import InquiryList from './pages/inquiry/InquiryList'
 import Login from './pages/auth/Login'
 import LoginSuccess from './pages/auth/LoginSuccess'
 import Register from './pages/auth/Register'
+import RegisterSuccess from './pages/auth/RegisterSuccess'
 import MyPage from './pages/MyPage'
 import NotFound from './pages/NotFound'
 
@@ -59,6 +60,7 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="login/success" element={<LoginSuccess />} />
         <Route path="register" element={<Register />} />
+        <Route path="register/success" element={<RegisterSuccess />} />
         <Route path="mypage" element={<ProtectedRoute><MyPage /></ProtectedRoute>} />
 
         <Route path="*" element={<NotFound />} />
